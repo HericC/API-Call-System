@@ -1,0 +1,73 @@
+{
+    "routes": {
+        "/views-sectors": {
+            "type": "get",
+            "parameters": []
+        },
+        "/views-equipment/id": {
+            "type": "get",
+            "parameters": [
+                "id"
+            ]
+        },
+        "/user/login": {
+            "type": "post",
+            "parameters": [
+                "user",
+                "password"
+            ]
+        },
+        "/user/add-user": {
+            "type": "post",
+            "parameters": [
+                "cpf",
+                "name",
+                "user",
+                "password",
+                "phone",
+                "manager",
+                "id_sector"
+            ]
+        },
+        "/user/update-password": {
+            "type": "post",
+            "parameters": [
+                "id",
+                "password"
+            ]
+        },
+        "/called/views-calleds": {
+            "type": "get",
+            "parameters": []
+        },
+        "/called/add-called": {
+            "type": "post",
+            "parameters": [
+                "theme",
+                "note",
+                "id_user",
+                "id_equipment"
+            ]
+        },
+        "/called/update-technical": {
+            "type": "post",
+            "parameters": [
+                "id_called",
+                "id_user"
+            ]
+        },
+        "/called/update-solution": {
+            "type": "post",
+            "parameters": [
+                "id_called",
+                "solution"
+            ]
+        },
+        "/called/concluded-called": {
+            "type": "post",
+            "parameters": [
+                "id_called"
+            ]
+        }
+    }
+}

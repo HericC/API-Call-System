@@ -16,13 +16,15 @@ server.use(bodyParser.json());
 
 // Loading Routes
 const routes = require('./api/routes/routes');
-const testRoutes = require('./api/routes/testRoutes');
+const userRoutes = require('./api/routes/userRoutes');
+const calledRoutes = require('./api/routes/calledRoutes');
 // ...
 
 
 // Using Routes
 server.use(routes);
-server.use('/test', testRoutes);
+server.use('/user', userRoutes);
+server.use('/called', calledRoutes);
 // ...
 
 

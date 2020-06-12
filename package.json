@@ -1,5 +1,5 @@
 {
-  "name": "API-SISTEMA-DE-CHAMADO",
+  "name": "API-Call-System",
   "version": "1.0.0",
   "description": "API de um sistema de chamado, desenvolvido para um projeto de fins didáticos realizado durante o curso de Desenvolvimento de Sistemas no SENAI.",
   "main": "server.js",
