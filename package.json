@@ -1,7 +1,7 @@
 {
-  "name": "API_RESTFul",
-  "version": "1.1.0",
-  "description": "Simple template of a RESTFul API made in Nodejs and Express.js",
+  "name": "API-SISTEMA-DE-CHAMADO",
+  "version": "1.0.0",
+  "description": "API de um sistema de chamado, desenvolvido para um projeto de fins didáticos realizado durante o curso de Desenvolvimento de Sistemas no SENAI.",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
