@@ -16,7 +16,7 @@ module.exports.addCalled = (req, res) => {
     if (req.body.id_equipment === undefined || req.body.id_equipment === '') errors.push('id_equipment not defined');
     if (errors.length) return res.json({ 'error': { 'msg': errors } });
 
-    con.query(`call inset_called("${req.body.theme}", "${req.body.note}", "${req.body.id_user}", 
+    con.query(`call insert_called("${req.body.theme}", "${req.body.note}", "${req.body.id_user}", 
     "${req.body.id_equipment}");`, (err, result, field) => {
         if (err) return res.json({ 'error': err });
         return res.json({ 'success': result });
