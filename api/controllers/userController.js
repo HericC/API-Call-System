@@ -24,6 +24,7 @@ module.exports.addUser = (req, res) => {
     if (req.body.user === undefined || req.body.user === '') errors.push('user not defined');
     if (req.body.password === undefined || req.body.password === '') errors.push('password not defined');
     else if (req.body.password.length < 8) errors.push('password too small');
+    if (req.body.phone[0] === '0' && req.body.phone[1] !== '0') req.body.phone = req.body.phone.substr(1);
     if (req.body.phone === undefined) errors.push('phone not defined');
     else if (!phoneValidation(req.body.phone)) errors.push('invalid phone');
     if (req.body.manager === undefined || req.body.manager === '') errors.push('manager not defined');
