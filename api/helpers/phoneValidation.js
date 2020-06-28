@@ -1,4 +1,3 @@
 module.exports = (phone) => {
-    for (const i of phone) if (!parseInt(i)) return false;
-    return true;
+    return /^(?:(?:\+|00)?(55)\s?)?(?:\(?([0-0]?[0-9]{1}[0-9]{1})\)?\s?)??(?:((?:9\d|[2-9])\d{3}\-?\d{4}))$/.test(phone);
 }
