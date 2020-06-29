@@ -1,6 +1,7 @@
 const con = require('../database/connection');
 const cpfValidation = require('../helpers/cpfValidation');
 const phoneValidation = require('../helpers/phoneValidation');
+const generateAccessJWT = require('../helpers/generateAccessJWT');
 
 module.exports.login = (req, res) => {
     const errors = [];
@@ -11,7 +12,20 @@ module.exports.login = (req, res) => {
 
     con.query(`call login("${req.body.user}", "${req.body.password}");`, (err, result, field) => {
         if (err) return res.json({ 'error': err });
-        return res.json({ 'success': result[0] });
+        if (!result[0].length) return res.json({ 'error': 'user or password incorrect' });
+
+        const token = generateAccessJWT(result[0][0].id);
+
+        result[0].push({
+            'auth': true,
+            'header': process.env.SECRET_HEADER,
+            'token': token,
+            'time': process.env.SECRET_TIME
+        });
+
+        return res.json({
+            'success': result[0],
+        });
     });
 }
 
