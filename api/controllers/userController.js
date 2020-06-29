@@ -18,7 +18,6 @@ module.exports.login = (req, res) => {
 
         result[0].push({
             'auth': true,
-            'header': process.env.SECRET_HEADER,
             'token': token,
             'time': process.env.SECRET_TIME
         });
